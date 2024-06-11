@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FELIZ DIA DOS NAMORADOS</title>
+    <style>
+        @font-face {
+            font-family: 'love';
+            src: url(imagens/MfLoveSong.ttf) format('truetype');
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background-color: #eeb7ee;
+        }
+        h1 {
+            font-family: 'love';
+            color: #ff0080;
+            text-align: center;
+            font-size: 50px;
+        }
+        h2 {
+            font-family: 'love';
+            color: #ff0080;
+        }
+        .album {
+            
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .photo {
+            margin: 10px;
+            border: 2px solid #ff69b4;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .photo img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .caption {
+            font-family: 'love';
+            text-align: center;
+            padding: 5px;
+            background-color: #fff;
+        }
+
+        .heart {
+            width: 50px;
+            height: 50px;
+            background-color: #ff4d4d;
+            position: absolute;
+            transform: rotate(-45deg);
+            animation: float 5s infinite;
+        }
+        .heart::before,
+        .heart::after {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background-color: #ff4d4d;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart::before {
+            top: -25px;
+            left: 0;
+        }
+        .heart::after {
+            top: 0;
+            left: 20px;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(-45deg);
+                opacity: 1;
+            } 
+            
+            100% {
+                transform: translateY(-2000px) rotate(-45deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>FELIZ DIA DOS NAMORADOS</h1>
+    <h2>Nossos Momentos</h2>
+    <div class="album">
+        <div class="photo">
+            <img src="imagens/foto01.jpeg" alt="Foto 1">
+            <div class="caption">Turistando...</div>
+        </div>
+        <div class="photo">
+            <img src="imagens/foto02.jpeg" alt="Foto 2">
+            <div class="caption">Esperando o busão</div>
+        </div>
+        <div class="photo">
+            <img src="imagens/foto03.jpeg" alt="Foto 2">
+            <div class="caption">Orquestrando</div>
+        </div>
+        <div class="photo">
+            <img src="imagens/foto04.jpeg" alt="Foto 2">
+            <div class="caption">cont..Esperando o busão</div>
+        </div>
+        <div class="photo">
+            <img src="imagens/foto05.jpeg" alt="Foto 2">
+            <div class="caption">Dentro do busão</div>
+        </div>
+        <div class="photo">
+            <img src="imagens/foto06.jpeg" alt="Foto 2">
+            <div class="caption">Ilha dos poldros MA</div>
+        </div>
+        <div class="photo">
+            <img src="imagens/foto07.jpeg" alt="Foto 2">
+            <div class="caption">Nossa páscoa</div>
+        </div>
+        <div class="photo">
+            <img src="imagens/foto08.jpeg" alt="Foto 2">
+            <div class="caption">Dando uma de modelo PI</div>
+        </div>
+        <div class="photo">
+            <img src="imagens/foto09.jpeg" alt="Foto 2">
+            <div class="caption">Beira-mar</div>
+        </div>
+        <div class="photo">
+            <img src="imagens/foto10.jpeg" alt="Foto 2">
+            <div class="caption">Momentos Parnaíba PI</div>
+        </div>
+        <div class="photo">
+            <img src="imagens/foto11.jpeg" alt="Foto 2">
+            <div class="caption">Praia peito de moça PI</div>
+        </div>
+        <div class="photo">
+            <img src="imagens/foto12.jpeg" alt="Foto 2">
+            <div class="caption">Ilha dos Tatús-Parnaíba</div>
+        </div>
+        <div class="photo">
+            <img src="imagens/foto13.jpeg" alt="Foto 2">
+            <div class="caption">Primeira trilha</div>
+        </div>
+        <div class="photo">
+            <img src="imagens/foto14.jpeg" alt="Foto 2">
+            <div class="caption">Dia qualquer - Beira-mar</div>
+        </div>
+        <div class="photo">
+            <img src="imagens/foto15.jpeg" alt="Foto 2">
+            <div class="caption">Jack e Rose</div>
+        </div>
+        
+    </div>
+
+
+    <script>
+        function criarcoracao() {
+            const coracao = document.createElement('div')
+            coracao.className = 'heart'
+            coracao.style.left = `${Math.random() * 100}vw`
+            coracao.style.animationDuration = `${Math.random() * 2 + 3}s`
+            document.body.appendChild(coracao)
+            
+            setTimeout(() => {
+                coracao.remove()
+            }, 5000)
+        }
+        
+        setInterval(criarcoracao, 300)
+    </script>
+</body>
+</html>
